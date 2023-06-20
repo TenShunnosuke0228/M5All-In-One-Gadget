@@ -15,12 +15,20 @@ private: // privateはクラス内からしかアクセスできない
     bool m_flag_btnB_is_pressed = false;
     bool m_flag_btnC_is_pressed = false;
 
+    //bool m_menuInitExecuted = false;  //メニュー画面の1回しか表示しないため
+
+
     /* State Machine */
     State m_state = TITLE;
     Action m_action = ENTRY;
 
     /* GUI State */
     FocusState m_focus_state = MENU_WBGT;
+
+
+    FocusState current_state = MENU_WBGT;
+    FocusState next_state = MENU_DATE;
+
 
 public: // publicはどこからでもアクセス可能
     State getState();
@@ -36,7 +44,13 @@ public: // publicはどこからでもアクセス可能
     void setBtnAllFlgFalse();
     void setStateMachine(State state, Action action);
     void displayTitleInit();
+
     void displayMenuInit();
+    void displayMenuInit_MENU_DATE();
+    void displayMenuInit_MENU_WBGT();
+    void displayMenuInit_MENU_MUSIC();
+    void displayMenuInit_MENU_MEASURE();
+
     void focusChangeImg(FocusState current_state, FocusState next_state);
     void displayWBGTInit();
     void displayTempHumiIndex();

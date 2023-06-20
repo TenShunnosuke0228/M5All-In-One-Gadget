@@ -14,7 +14,7 @@ void DrTHSensor::init()
 void DrTHSensor::initAesht3x()
 {
     Wire.beginTransmission(SHT31_ADDR); // I2Cスレーブ「Arduino Uno」のデータ送信開始
-    Wire.write(SOFT_RESET_MSB); // ソフトリセットMSB
+    Wire.write(SOFT_RESET_MSB); // ソフinitトリセットMSB
     Wire.write(SOFT_RESET_LSB); // ソフトリセットLSB
     Wire.endTransmission(); // I2Cスレーブ「Arduino Uno」のデータ送信終了
     delay(100);
